@@ -14,15 +14,96 @@
 		<![endif]-->
 	</head>
 	<body>
-		<h1>Bootstrap 3 UI Components</h1>
+		<div class="container-fluid">
+			<h1>Bootstrap 3 UI Components</h1>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">alert</div>
-      <div class="panel-body">
-        <pre>$bs.alert( message, callback, type, title, buttonText );</code>
-      </div>
-      <div class="panel-footer"><button class="btn btn-link btn-bsui" data-func="alert" data-message="Custom message to show." data-type="success" data-title="Custom Title">View Demo</button></div>
-    </div>
+			<div class="panel panel-default">
+				<div class="panel-heading">1.) alert</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.alert( message, callback, type, title, buttonText );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.alert( 'Custom message to show.', function() {}, 'success', 'Custom Title', 'CustomButton' );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">1.) confirm</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.confirm( message, callback, type, title, buttons );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.confirm( 'Are you sure to proceed?', function( clickedButtonNumber ) {
+	$bs.alert( 'You clicked button number ' + clickedButtonNumber + '.' );
+}, 'success', 'Really?', [ 'Button1', 'Button2', 'Button3' ] );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">3.) prompt</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.prompt( message, callback, type, title, buttonText );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.prompt( 'Custom message to show.', function( value ) {
+	$bs.alert( 'You entered : ' + value );
+}, 'success', 'Custom Title', 'CustomButton' );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">4.) popup</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.popup( url, type, title, callback, backdrop );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.popup( 'https://www.youtube.com/embed/hwpOYkvS_1Q', 'default', 'I Love My Son', function() {}, false );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">5.) loader</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.loader.show( options );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.loader.show({
+	message : 'Work started ...',
+	icon : true	//needs font awesome to work
+});
+setTimeout( $bs.loader.hide.bind( $bs.loader ), 3000 );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">6.) progress</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.progress.show( options );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.progress.start( 'danger' );
+setTimeout( $bs.progress.end.bind( $bs.progress ), 5000 );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+		</div>
       
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -30,8 +111,7 @@
     <script>
       ( function( $ ) {
         $( '.btn-bsui' ).click( function() {
-          var data = $( this ).data();
-          $bs[ data.func ]( data.message, $.noop, data.type, data.title );
+          eval( $( 'pre', $( this ).parent().prev() ).text() );
         });
       })( jQuery );
     </script>
