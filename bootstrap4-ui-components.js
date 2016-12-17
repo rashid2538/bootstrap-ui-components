@@ -69,8 +69,10 @@
 				})[ 0 ].src = url;
 			}).modal( 'show' );
 		}, loader : {
+			counter : 0,
 			show : function( options ) {
 				if( $( '#bsLoaderModal' ).length > 0 ) {
+					this.counter++;
 					return false;
 				}
 				options = $.extend( {
@@ -92,6 +94,10 @@
 					}, options.timeout );
 				});
 			}, hide : function() {
+				if( this.counter > 0 ) {
+					this.counter--;
+					return false;
+				}
 				$( '#bsLoaderModal' ).modal( 'hide' );
 			}
 		}, progress : {
@@ -145,8 +151,4 @@
 			}
 		}
 	};
-	/* if( document.readyState != 'complete' ) {
-		$bs.progress.start();
-		window.addEventListener( 'load', $bs.progress.end.bind( $bs.progress ), false );
-	} */
 })( jQuery );
