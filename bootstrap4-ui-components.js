@@ -105,6 +105,7 @@
 			percent : 10,
 			start : function( type, update ) {
 				if( $( '#app-progress' ).length == 0 ) {
+					$( '<style type="text/css">#app-progress{position: fixed;display: none;position: fixed;top: 0;left: 0;width: 10%;z-index: 100;height: 3px;width: 10%;background: #ef5350;}#app-progress.in{display: block;}#app-progress:after{position: absolute;content: \'\';top: 0;opacity: 1;width: 10%;right: 0px;height: 3px;box-shadow: #b91f1f 1px 0 6px 2px;border-radius: 50%;}</style>' ).appendTo( document.head );
 					$( '<div id="app-progress"></div>' ).prependTo( document.body );
 				}
 				type = type || 'danger';
