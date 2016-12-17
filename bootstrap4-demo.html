@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Bootstrap 4 UI Components</title>
+
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" />
+
+		<!--[if lt IE 9]>
+			<script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container-fluid">
+			<h1>Bootstrap 3 UI Components</h1>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">1.) alert</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.alert( message, callback, type, title, buttonText );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.alert( 'Custom message to show.', function() {}, 'success', 'Custom Title', 'CustomButton' );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">1.) confirm</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.confirm( message, callback, type, title, buttons );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.confirm( 'Are you sure to proceed?', function( clickedButtonNumber ) {
+	$bs.alert( 'You clicked button number ' + clickedButtonNumber + '.' );
+}, 'success', 'Really?', [ 'Button1', 'Button2', 'Button3' ] );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">3.) prompt</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.prompt( message, callback, type, title, buttonText );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.prompt( 'Custom message to show.', function( value ) {
+	$bs.alert( 'You entered : ' + value );
+}, 'success', 'Custom Title', 'CustomButton' );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">4.) popup</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.popup( url, type, title, callback, backdrop );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.popup( 'https://www.youtube.com/embed/hwpOYkvS_1Q', 'default', 'I Love My Son', function() {}, false );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">5.) loader</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.loader.show( options );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.loader.show({
+	message : 'Work started ...',
+	icon : true	//needs font awesome to work
+});
+setTimeout( $bs.loader.hide.bind( $bs.loader ), 3000 );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">6.) progress</div>
+				<div class="panel-body">
+					<b>Syntax :</b><br />
+					<code>$bs.progress.show( options );</code>
+					<br /><b>Example :</b><br />
+					<pre>$bs.progress.start();
+setTimeout( $bs.progress.end.bind( $bs.progress ), 5000 );</pre>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-link btn-bsui">View Demo</button>
+				</div>
+			</div>
+		</div>
+      
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+		<script src="bootstrap4-ui-components.js"></script>
+    <script>
+      ( function( $ ) {
+        $( '.btn-bsui' ).click( function() {
+          eval( $( 'pre', $( this ).parent().prev() ).text() );
+        });
+      })( jQuery );
+    </script>
+	</body>
+</html>
