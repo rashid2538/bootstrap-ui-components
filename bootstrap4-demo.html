@@ -17,22 +17,22 @@
 		<div class="container-fluid">
 			<h1>Bootstrap 3 UI Components</h1>
 
-			<div class="card card-default">
-				<div class="panel-heading">1.) alert</div>
-				<div class="panel-body">
+			<div class="card">
+				<div class="card-header">1.) alert</div>
+				<div class="card-block">
 					<b>Syntax :</b><br />
 					<code>$bs.alert( message, callback, type, title, buttonText );</code>
 					<br /><b>Example :</b><br />
 					<pre>$bs.alert( 'Custom message to show.', function() {}, 'success', 'Custom Title', 'CustomButton' );</pre>
 				</div>
-				<div class="panel-footer">
+				<div class="card-footer">
 					<button class="btn btn-link btn-bsui">View Demo</button>
 				</div>
 			</div>
 
-			<div class="card card-default">
-				<div class="panel-heading">1.) confirm</div>
-				<div class="panel-body">
+			<div class="card">
+				<div class="card-header">1.) confirm</div>
+				<div class="card-block">
 					<b>Syntax :</b><br />
 					<code>$bs.confirm( message, callback, type, title, buttons );</code>
 					<br /><b>Example :</b><br />
@@ -40,14 +40,14 @@
 	$bs.alert( 'You clicked button number ' + clickedButtonNumber + '.' );
 }, 'success', 'Really?', [ 'Button1', 'Button2', 'Button3' ] );</pre>
 				</div>
-				<div class="panel-footer">
+				<div class="card-footer">
 					<button class="btn btn-link btn-bsui">View Demo</button>
 				</div>
 			</div>
 
-			<div class="card card-default">
-				<div class="panel-heading">3.) prompt</div>
-				<div class="panel-body">
+			<div class="card">
+				<div class="card-header">3.) prompt</div>
+				<div class="card-block">
 					<b>Syntax :</b><br />
 					<code>$bs.prompt( message, callback, type, title, buttonText );</code>
 					<br /><b>Example :</b><br />
@@ -55,27 +55,27 @@
 	$bs.alert( 'You entered : ' + value );
 }, 'success', 'Custom Title', 'CustomButton' );</pre>
 				</div>
-				<div class="panel-footer">
+				<div class="card-footer">
 					<button class="btn btn-link btn-bsui">View Demo</button>
 				</div>
 			</div>
 
-			<div class="card card-default">
-				<div class="panel-heading">4.) popup</div>
-				<div class="panel-body">
+			<div class="card">
+				<div class="card-header">4.) popup</div>
+				<div class="card-block">
 					<b>Syntax :</b><br />
 					<code>$bs.popup( url, type, title, callback, backdrop );</code>
 					<br /><b>Example :</b><br />
 					<pre>$bs.popup( 'https://www.youtube.com/embed/hwpOYkvS_1Q', 'default', 'I Love My Son', function() {}, false );</pre>
 				</div>
-				<div class="panel-footer">
+				<div class="card-footer">
 					<button class="btn btn-link btn-bsui">View Demo</button>
 				</div>
 			</div>
 
-			<div class="card card-default">
-				<div class="panel-heading">5.) loader</div>
-				<div class="panel-body">
+			<div class="card">
+				<div class="card-header">5.) loader</div>
+				<div class="card-block">
 					<b>Syntax :</b><br />
 					<code>$bs.loader.show( options );</code>
 					<br /><b>Example :</b><br />
@@ -85,21 +85,21 @@
 });
 setTimeout( $bs.loader.hide.bind( $bs.loader ), 3000 );</pre>
 				</div>
-				<div class="panel-footer">
+				<div class="card-footer">
 					<button class="btn btn-link btn-bsui">View Demo</button>
 				</div>
 			</div>
 
-			<div class="card card-default">
-				<div class="panel-heading">6.) progress</div>
-				<div class="panel-body">
+			<div class="card">
+				<div class="card-header">6.) progress</div>
+				<div class="card-block">
 					<b>Syntax :</b><br />
 					<code>$bs.progress.show( options );</code>
 					<br /><b>Example :</b><br />
 					<pre>$bs.progress.start();
 setTimeout( $bs.progress.end.bind( $bs.progress ), 5000 );</pre>
 				</div>
-				<div class="panel-footer">
+				<div class="card-footer">
 					<button class="btn btn-link btn-bsui">View Demo</button>
 				</div>
 			</div>
